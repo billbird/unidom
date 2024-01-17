@@ -1,6 +1,6 @@
 # unidom: A modular domination solver
 
-The theoretical basis for the algorithms used in this program is described in the thesis _Computational Methods for Domination Problems_ from 2017.
+This program and the algorithms it contains are described in more detail in the PhD thesis _Computational Methods for Domination Problems_ from 2017, [available from Library and Archives Canada](https://library-archives.canada.ca/eng/services/services-libraries/theses/Pages/item.aspx?idNumber=1199659634)
 
 To compile:
 `make`
