@@ -3,10 +3,14 @@
 This program and the algorithms it contains are described in more detail in the PhD thesis _Computational Methods for Domination Problems_ from 2017, [available from Library and Archives Canada](https://library-archives.canada.ca/eng/services/services-libraries/theses/Pages/item.aspx?idNumber=1199659634)
 
 To compile:
-`make`
+```
+make
+```
 
 Basic usage: 
-`./unidom < some_graph.txt`
+```
+./unidom < some_graph.txt
+```
 where `some_graph.txt` contains an adjacency list representation in the format documented in the next section.
 
 ## Graph Input
@@ -47,7 +51,9 @@ Besides the basic text input format, the program also contains several procedura
 A full list of generators is available via `./unidom -h`. 
 
 As a diagnostic, you can also output procedurally generated graphs as adjacency lists (in the format above), making `unidom` also useful as a graph generator on its own. The command below disables the domination solver and outputs only the input graph (which, in this case, is the 10 x 10 Queen graph):
-`./unidom -I queen -n 10 -S none -O graph_only`
+```
+./unidom -I queen -n 10 -S none -O graph_only
+```
 
 If you want to add extra generators and need some implementation context, look at `input_various_generators.cpp`.
 
