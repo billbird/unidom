@@ -36,7 +36,7 @@ namespace unidom{
     extern std::ostream& log;
     
     const std::string default_input_source {"basic_input"};
-    const std::string default_solver {"DD"};
+    const std::string default_solver {"fixed_order"};
     const std::string default_output_proxy {"output_all"};
     
     

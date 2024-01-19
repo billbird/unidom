@@ -61,7 +61,7 @@ If you want to add extra generators and need some implementation context, look a
 ## Solver Algorithms
 The solver algorithm can be chosen with the `-S` parameter (e.g. `-S MDD`). If the program takes
 a while with the default parameters, try the three solvers listed below
- - `fixed_order`: A very basic solver with low overhead, better for easy inputs.
+ - `fixed_order`: A very basic solver with low overhead, better for small/easy problem instances.
  - `DD`: A solver which uses a bounding strategy based on _domination degree_. The domination degree of a vertex _v_ (with respect to some partially constructed dominating set which does not contain _v_) is the number of additional vertices that would be dominated if _v_ were added to the dominating set.
  - `MDD`: A solver which uses a bounding strategy based on _max dominator degree_. With respect to some partially constructed dominating set, the max dominator degree of an as-yet undominated vertex _v_ is the maximum domination degree of any vertex in N\[_v_\].
 
@@ -91,3 +91,8 @@ For example, to search for dominating sets which must contain vertices 0 and 3 b
 The type of output produced can be controlled with the `-O` parameter. A complete list of output proxies is available via `./unidom -h`. The following two are particularly important.
  - `output_all`: Output every dominating set produced by the solver (one per line), followed by a line containing only `-1`. This is the default output method. Note that the word _all_ in this context does not imply that dominating sets will be generated exhaustively, just that every dominating set produced by the solver will be output; when combined with an optimizing solver, the output will usually be a cascading sequence of progressively smaller dominating sets (each one produced as the solver refines its bounds). If you want to exhaustively generate dominating sets, choose an appropriate solver (see above).
   - `output_best`: Output only the single smallest dominating set produced by the solver. With this option, no output is generated until the solver finishes.
+Both of the output proxies above produce dominating sets in the form
+```
+<size of dominating set> <list of vertices in the set>
+```
+For example, the line `3 6 10 17` describes a dominating set of size three, containing vertices 6, 10 and 17 (where vertex numbering matches the original numbering of the input graph and vertex indices start at zero).
